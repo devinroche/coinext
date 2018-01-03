@@ -1,0 +1,21 @@
+{
+  "name": "coinext",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devinroche/coinext.git"
+  },
+  "dependencies": {
+    "menubar": "*"
+  },
+  "devDependencies": {
+    "electron-packager": "5.2.1",
+    "electron-prebuilt": "^0.36.0"
+  },
+  "main": "main.js",
+  "scripts": {
+    "build": "electron-packager . coinext --platform=darwin --arch=x64 && cp Icon.icns coinext-darwin-x64/coinext.app/Contents/Resources/atom.icns",
+    "start": "electron ."
+  }
+}

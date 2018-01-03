@@ -1,0 +1,39 @@
+<html>
+
+    <head>
+        <title>Example App</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+        <link rel="stylesheet" type="text/css" href="./style.css">
+
+    </head>
+
+    <body>
+        <input class="u-full-width" id="myInput" type="text" placeholder="Search Coins">
+
+        <table class="u-full-width">
+            <thead>
+              <tr>
+                <th>Token</th>
+                <th>Price</th>
+                <th>%</th>
+              </tr>
+            </thead>
+            <tbody id="myTable">
+             
+            </tbody>
+          </table>
+
+        <script>window.$ = window.jQuery = require("./js/jquery.min.js");</script>
+        <script src="./js/script.js" type="text/javascript"></script>
+
+        <script>
+            document.addEventListener("keydown", function (e) {
+                if (e.which === 123) {
+                    require('remote').getCurrentWindow().toggleDevTools();
+                } else if (e.which === 116) {
+                    location.reload();
+                }
+            });
+        </script>
+    </body>
+</html>
