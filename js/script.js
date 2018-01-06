@@ -5,11 +5,12 @@ window.onload = function() {
 
 function getCoinData(){
     $.get( "https://api.coinmarketcap.com/v1/ticker", function( data ) {
-        $("table tbody tr").remove();
+        $("#myTable tr").remove();
         $.each(data, function(i, item) {
             var neg = isNegative(item.percent_change_24h)
-            $('table').append('<tr><td>'+item.name+'</td><td>'+item.price_usd+'</td><td class='+neg+'>'+item.percent_change_24h+'</td></tr>');
+            $('table').append('<tr data-userid='+item.symbol+'><td style="display: none">'+item.symbol+'</td><td>'+item.name+'</td><td>'+item.price_usd+'</td><td class='+neg+'>'+item.percent_change_24h+'</td></tr>');
         });
+        filterTable()
     });
 }
 
@@ -20,9 +21,14 @@ function isNegative(val){
         return "positive"
     }
 }
+var searchToken = ""
 $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
+    searchToken = $(this).val().toLowerCase();
+    filterTable()
 });
+
+function filterTable(){
+    $("#myTable tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(searchToken) > -1)
+    });
+}
