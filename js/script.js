@@ -1,3 +1,5 @@
+const remote = require('electron').remote;
+
 window.onload = function() {
     getCoinData()
     window.setInterval(getCoinData, 6000);
@@ -31,4 +33,7 @@ function filterTable(){
     $("#myTable tr").filter(function() {
         $(this).toggle($(this).text().toLowerCase().indexOf(searchToken) > -1)
     });
+}
+function closeWindow(){
+    remote.getCurrentWindow().close()
 }
