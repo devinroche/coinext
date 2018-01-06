@@ -22,3 +22,6 @@ Install the stuff you need ```npm install``` then see the magic ```npm start```
 - [ ] Create alerts 
 - [ ] Add token and amount to portfolio
 - [ ] See portfolio value change!!
+
+### doge tax
+![year of the doge](https://media.giphy.com/media/XjXtEuBHulPcQ/giphy.gif)
