@@ -7,6 +7,7 @@
     "url": "git+https://github.com/devinroche/coinext.git"
   },
   "dependencies": {
+    "electron-store": "1.3.0",
     "menubar": "*"
   },
   "devDependencies": {
