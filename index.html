@@ -1,37 +1,40 @@
 <html>
 
-    <head>
-        <title>Example App</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
-        <link rel="stylesheet" type="text/css" href="./style.css">
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    </head>
+<head>
+    <title>Example App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+</head>
 
-    <body>
-        <p onclick='closeWindow()'><i class="fa fa-times-circle-o fa-lg" aria-hidden="true"></i></p>
-        <p id="portfolio">
+<body>
+    <!-- <div class="close" onclick='closeWindow()'><i class="fa fa-times-circle-o fa-lg" aria-hidden="true"></i></div> -->
+    <!-- <p id="portfolio">
             <i class="fa fa-usd fa-lg" id="toggle-1" aria-hidden="true"></i>
             <i class="fa fa-home fa-lg" id="toggle-2" aria-hidden="true"></i>
-        </p>
+        </p> -->
 
-        <div id="all-coins">
-            <input class="u-full-width" id="myInput" type="text" placeholder="search coins">
-
-            <table class="u-full-width">
-                <thead>
-                    <tr>
-                        <th>token</th>
-                        <th>price</th>
-                        <th>%</th>
-                    </tr>
-                </thead>
-                <tbody id="myTable">
-             
-                </tbody>
-            </table>
+    <div id="all-coins">
+        <div id="close" onclick='closeWindow()'>
+            <i class="fa fa-times-circle-o fa-lg" aria-hidden="true"></i>
         </div>
+        <div id="search">
+            <input class="u-full-width" id="myInput" type="text" placeholder="search coins">
+        </div>
+        <table class="u-full-width">
+            <thead>
+                <tr>
+                    <th>token</th>
+                    <th>price</th>
+                    <th>%</th>
+                </tr>
+            </thead>
+            <tbody id="myTable"></tbody>
+        </table>
+    </div>
 
-        <div id="portfolio">
+    <!-- <div id="portfolio">
                 <i class="fa fa-plus fa-lg" id="add-coin" aria-hidden="true"></i>
                 <form id="add-form">
                     <input id="token-name" placeholder="token symbol" />
@@ -51,23 +54,24 @@
                  
                     </tbody>
                 </table>
-            </div>
+            </div> -->
 
-        <div class="footer">
-            <p>devinroche.me</p>
-        </div>
+    <div class="footer">
+        <p>devinroche.me</p>
+    </div>
 
-        <script>window.$ = window.jQuery = require("./js/jquery.min.js");</script>
-        <script src="./js/script.js" type="text/javascript"></script>
+    <script>window.$ = window.jQuery = require("./js/jquery.min.js");</script>
+    <script src="./js/script.js" type="text/javascript"></script>
 
-        <script>
-            document.addEventListener("keydown", function (e) {
-                if (e.which === 123) {
-                    require('remote').getCurrentWindow().toggleDevTools();
-                } else if (e.which === 116) {
-                    location.reload();
-                }
-            });
-        </script>
-    </body>
+    <script>
+        document.addEventListener("keydown", function (e) {
+            if (e.which === 123) {
+                require('remote').getCurrentWindow().toggleDevTools();
+            } else if (e.which === 116) {
+                location.reload();
+            }
+        });
+    </script>
+</body>
+
 </html>
