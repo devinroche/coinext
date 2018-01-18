@@ -1,7 +1,8 @@
 var menubar = require('menubar')
+var path = require('path')
 
 var option = {
-    icon: 'icon.png',
+    icon:  path.join(__dirname, 'icon.png'),
     width: 400,
     height: 300
 }
