@@ -1,17 +1,15 @@
 const remote = require('electron').remote;
-const storage = require('./js/storage.js')
 
 window.onload = function () {
     getCoinData()
     window.setInterval(getCoinData, 6000);
-    console.log(storage.getPortfolio())
 }
 
 function getCoinData() {
     $.get("https://api.coinmarketcap.com/v1/ticker", function (data) {
         $("#myTable tr").remove();
-        $.each(data, function (i, item) {
-            var neg = isNegative(item.percent_change_24h)
+        $.each(data, (i, item) => {
+            const neg = isNegative(item.percent_change_24h)
             $('#myTable').append('<tr data-userid=' + item.symbol + '><td style="display: none">' + item.symbol + '</td><td>' + item.name + '</td><td>' + item.price_usd + '</td><td class=' + neg + '>' + item.percent_change_24h + '</td></tr>');
         });
         filterTable()
